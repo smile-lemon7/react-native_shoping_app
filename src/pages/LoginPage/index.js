@@ -18,7 +18,7 @@ export default class LoginPage extends Component {
 
   async componentDidMount() {
     let logined = await AsyncStorage.getItem("logined");
-    logined==='true'? this.props.navigation.navigate('Layout') : null;
+    logined==='true'? this.props.navigation.navigate('layout') : null;
   }
 
   saveCode = ({ code }) => {

@@ -4,22 +4,22 @@ import {
   StyleSheet,
   View,
   Image,
-  Text,
 } from 'react-native';
 
-import HomePage from '../pages/HomePage';
-import ClassesPage from '../pages/ClassesPage';
-import ShopingCartPage from '../pages/ShopingCartPage';
-import MinePage from '../pages/MinePage';
+import TopBar from '../TopBar';
+import HomePage from '../../pages/HomePage';
+import ClassesPage from '../../pages/ClassesPage';
+import ShopingCartPage from '../../pages/ShopingCartPage';
+import MinePage from '../../pages/MinePage';
 
-const HomeIcon = require('../assets/home.png');
-const HomeIcon_S = require('../assets/home_selected.png');
-const ClassesIcon = require('../assets/classes.png');
-const ClassesIcon_S = require('../assets/classes_selected.png');
-const CartIcon = require('../assets/shoping_cart.png');
-const CartIcon_S = require('../assets/shoping_cart_selected.png');
-const MineIcon = require('../assets/mine.png');
-const MinePageIcon = require('../assets/mine_selected.png');
+const HomeIcon = require('../../assets/home.png');
+const HomeIcon_S = require('../../assets/home_selected.png');
+const ClassesIcon = require('../../assets/classes.png');
+const ClassesIcon_S = require('../../assets/classes_selected.png');
+const CartIcon = require('../../assets/shoping_cart.png');
+const CartIcon_S = require('../../assets/shoping_cart_selected.png');
+const MineIcon = require('../../assets/mine.png');
+const MinePageIcon = require('../../assets/mine_selected.png');
 
 const tabs = [
   {icon: HomeIcon,selectedIcon: HomeIcon_S, tabPage: 'home', title: '首页', component: HomePage},
@@ -35,7 +35,6 @@ export default class Layout extends Component {
     }
   }
   render() {
-    console.log(tabs)
     return (<View style={{width:'100%',height:'100%'}}>
       <TabNavigator
         hidesTabTouch={true}
@@ -52,7 +51,7 @@ export default class Layout extends Component {
             onPress = {() => {this.setState({selectedTab:item.tabPage})}}
             key={i}
             >
-          <item.component  />
+          <item.component  navigation={this.props.navigation} />
         </TabNavigator.Item>))}
       </TabNavigator>
     </View>)

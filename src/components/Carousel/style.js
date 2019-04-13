@@ -1,21 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { hidden } from 'ansi-colors';
 
 export default StyleSheet.create({
-  container: {
-    // width: '92%',
-    flex: 1,
-    overflow: 'scroll',
-    alignItems: 'center',
-    // backgroundColor: "#F5FCFF",
-    backgroundColor: "#f0f0f0",
-  },
-  content: {
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   wrapper: {
     height: 190,
     justifyContent: 'center',

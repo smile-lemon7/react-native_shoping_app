@@ -9,9 +9,10 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, View} from 'react-native';
 import LoginPage from './src/pages/LoginPage';
-import HomePage from './src/pages/HomePage';
-import Layout from './src/Layout';
 import { createStackNavigator, createAppContainer } from "react-navigation";
+import HomePage from './src/pages/HomePage';
+import BottomBar from './src/Layout/BottomBar';
+import ProductDetails from './src/pages/ProductDetails';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -32,14 +33,14 @@ const instructions = Platform.select({
 // }
 
 const AppNavigator = createStackNavigator({
-  Login: {
+  login: {
     screen: LoginPage
   },
-  // Home: {
-  //   screen: HomePage
-  // },
-  Layout: {
-    screen: Layout,
+  prod_detail: {
+    screen: ProductDetails
+  },
+  layout: {
+    screen: BottomBar,
   }
 });
 export default createAppContainer(AppNavigator);
