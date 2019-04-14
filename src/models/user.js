@@ -28,7 +28,7 @@ export default {
         const { data } = await userServices.login({phone});
         // reducers.saveUserInfo({params: data});
         await AsyncStorage.setItem("logined", 'true');
-        await AsyncStorage.setItem("userInfo", JSON.stringify(data))
+        await AsyncStorage.setItem("userInfo", JSON.stringify(data));
       }else {
         Toast.show('验证码输入错误',{position: Toast.positions.CENTER,})
   

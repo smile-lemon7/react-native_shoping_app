@@ -7,12 +7,13 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, View} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import LoginPage from './src/pages/LoginPage';
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import HomePage from './src/pages/HomePage';
 import BottomBar from './src/Layout/BottomBar';
 import ProductDetails from './src/pages/ProductDetails';
+import ConfirmOrder from './src/pages/ConfirmOrder';
+import theme from './src/theme';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -37,10 +38,24 @@ const AppNavigator = createStackNavigator({
     screen: LoginPage
   },
   prod_detail: {
-    screen: ProductDetails
+    screen: ProductDetails,
+    navigationOptions:{
+      header: null,
+      headerBackTitle: '确认订单',
+    },
   },
   layout: {
     screen: BottomBar,
+    navigationOptions:{
+      header: null,
+    },
+  },
+  confirmOrder : {
+    screen: ConfirmOrder,
+    navigationOptions:{
+      headerStyle: {backgroundColor: theme.primaryColor},
+      headerBackTitleStyle: {color: '#fff'},
+    },
   }
 });
 export default createAppContainer(AppNavigator);

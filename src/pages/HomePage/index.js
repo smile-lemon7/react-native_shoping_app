@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, AsyncStorage, FlatList, ScrollView, SectionList} from 'react-native';
+import { Text, View, AsyncStorage, FlatList, Image, ScrollView, SectionList, Button} from 'react-native';
+
 import styles from './style.js';
 import Carousel from '../../components/Carousel';
 import ProdItem from '../../components/ProdItem';
@@ -10,7 +11,16 @@ import carouselServices from '../../services/carousel';
 import Title from '../../components/Title';
 
 export default class HomePage extends Component {
-  
+  static navigationOptions = {
+    title: '首页',
+    tabBarIcon: ({focused}) => {
+      const icon = focused
+          ? require('../../assets/home_selected.png')
+          : require('../../assets/home.png');
+      return <Image source={icon} style={{height: 22, width: 22}}/>;
+    },
+  };
+
   constructor(props) {
     super(props);
     this.state = {

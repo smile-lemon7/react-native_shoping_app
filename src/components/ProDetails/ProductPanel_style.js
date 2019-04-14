@@ -32,6 +32,7 @@ export default StyleSheet.create({
   prod: {
     width: '100%',
     flexDirection: 'row',
+    alignItems: 'center',
     paddingTop: 10,
     paddingBottom: 10,
     paddingLeft: 15,
@@ -45,6 +46,9 @@ export default StyleSheet.create({
   },
   prod_R: {
     flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   prodDetailWrap: {
     width: '100%',
@@ -54,4 +58,28 @@ export default StyleSheet.create({
     width: '92%',
     flexDirection: 'row',
   },
+  normsTitleWrap: {
+    width: '100%',
+    flexDirection: 'row',
+    paddingTop: 20,
+    paddingBottom: 15,
+    justifyContent: 'center',
+  },
+  normsTitle: {
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  normsWrap: {
+    width: '92%',
+    flexDirection: 'row',
+    marginLeft: '4%',
+    paddingTop: 15,
+    paddingBottom: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f1f1f1',
+  },
+  normals_title: {
+    width: 100,
+    marginRight: 20,
+  }
 })

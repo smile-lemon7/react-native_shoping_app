@@ -5,6 +5,11 @@ export default StyleSheet.create({
     // width: '42%',
     width: '48%',
   },
+  CardWrapR: {
+    height: 140,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   Card: {
     width: '100%',
     height: 200,
@@ -22,6 +27,10 @@ export default StyleSheet.create({
     height: '50%',
     marginBottom: 10,
     marginTop: 10,
+  },
+  imgR: {
+    width: '80%',
+    height: '100%',
   },
   CardR: {
     width: '100%',

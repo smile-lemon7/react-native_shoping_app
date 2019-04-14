@@ -27,7 +27,7 @@ export default class ImgContainer extends Component {
     return (
       <View style={{flex: 1}}>
         {heightArr.length>0?imgList.map((itm, inx) => (
-          <Image source={{uri: itm}} style={{width:screenWidth, height: heightArr[inx]}} key={itm} />
+          <Image source={{uri: itm}} style={{width:screenWidth, height: heightArr[inx]}} key={inx} />
           // <FitImage
           //   source={{uri:itm}}
           //   resizeMode="contain"

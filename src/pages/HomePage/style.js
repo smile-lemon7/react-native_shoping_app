@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { hidden } from 'ansi-colors';
+import theme from '../../theme';
 
 export default StyleSheet.create({
   container: {
@@ -9,6 +9,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     // backgroundColor: "#F5FCFF",
     backgroundColor: "#f0f0f0",
+    paddingTop: theme.statusBarHeight,
   },
   content: {
     width: '100%',
