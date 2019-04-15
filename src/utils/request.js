@@ -30,7 +30,7 @@ export default function request(url, options={'mode': 'no-cors'}) {
   };
   options.headers = Object.assign(options.headers||{}, headers);
   options.json && (options.body = JSON.stringify(options.json));
-  // console.log("Api-Req: ", options)
+  console.log("Api-Req: ", options)
   return fetch(host+url, options)
     .then(checkStatus)
     .then(parseJSON)

@@ -5033,6 +5033,18 @@ react-lifecycles-compat@^3.0.4:
   resolved "http://registry.npm.taobao.org/react-lifecycles-compat/download/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha1-TxonOv38jzSIqMUWv9p4+HI1I2I=
 
+react-native-checkbox-field@^2.0.2:
+  version "2.0.2"
+  resolved "http://registry.npm.taobao.org/react-native-checkbox-field/download/react-native-checkbox-field-2.0.2.tgz#5a61cb52ab327f24b5ba1c4ad086bd7ffcb9257a"
+  integrity sha1-WmHLUqsyfyS1uhxK0Ia9f/y5JXo=
+
+react-native-checkbox@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/react-native-checkbox/download/react-native-checkbox-2.0.0.tgz#453bbfd2e055a21e69ebe7842414a055d50ff449"
+  integrity sha1-RTu/0uBVoh5p6+eEJBSgVdUP9Ek=
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-fit-image@^1.5.4:
   version "1.5.4"
   resolved "http://registry.npm.taobao.org/react-native-fit-image/download/react-native-fit-image-1.5.4.tgz#73d2fccc7ad902cf2ffcd008a2a74749ad50134a"

@@ -19,6 +19,8 @@ export default class LoginPage extends Component {
 
   async componentWillMount() {
     // await AsyncStorage.setItem("logined", 'false');
+    // await AsyncStorage.setItem("deliveryAddress", '{}');
+    // await AsyncStorage.setItem("address", '[]');
     let logined = await AsyncStorage.getItem("logined");
     this.setState({logined})
     logined==='true'? this.props.navigation.navigate('layout') : null;

@@ -102,14 +102,13 @@ export default class AddressPage extends Component {
     let { list } = this.state;
     let id = editInfo ? editInfo.id : undefined;
     list = list.map(item => ({...item, onEditClick: ()=>this.onEdit(item), onSelect: ()=>this.onSelect(item)}))
-
     return (
       <View style={[styles.container]}>
-        {loading?<Loading />:
+        {
           list.length>0?<FlatList 
-            data={list}
-            renderItem={({item}) => <AddressPanel addressInfo={item} key={item.id} />}
-            style={{width:'100%',backgroundColor:'#f1f1f1'}}
+          data={list}
+          renderItem={({item}) => <AddressPanel addressInfo={item} key={item.id} />}
+          style={{width:'100%',backgroundColor:'#f1f1f1'}}
           />:<Text>暂无数据，快去添加吧！</Text>
         }
         <Modal

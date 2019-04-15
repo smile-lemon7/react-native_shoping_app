@@ -78,8 +78,7 @@ export default class ProductDetails extends Component {
     product.counts = 1;
     let arr = [];
     arr.push(product);
-    // await AsyncStorage.setItem('unConfirmOrder', JSON.stringify({user_id, sumPrice: product.price, orderProdArr: arr}));
-    this.props.navigation.navigate('confirmOrder')
+    this.props.navigation.navigate('confirmOrder', {unConfirmOrder: {user_id, sumPrice: product.price, orderProdArr: arr}})
   }
 
   onAdd = () => {
@@ -111,7 +110,7 @@ export default class ProductDetails extends Component {
 
   onSelect = async (changeAddress) => {
     await AsyncStorage.setItem('deliveryAddress', JSON.stringify(changeAddress));
-    this.setState({addressModal: false, visible: true})
+    this.setState({currentAddress: changeAddress, addressModal: false, visible: true})
   }
 
   render() {

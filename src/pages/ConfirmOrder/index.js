@@ -25,6 +25,12 @@ export default class ConfirmOrder extends Component {
     }
   }
 
+  componentWillMount() {
+    // const { params: {prd_id} } = this.props.navigation.state;
+    const { params: {unConfirmOrder} } = this.props.navigation.state;
+    console.log(unConfirmOrder)
+  }
+
   render() {
     return (
       <View style={[styles.container]}>

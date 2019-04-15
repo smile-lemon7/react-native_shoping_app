@@ -11,7 +11,7 @@ export default class MinePage extends Component {
       const icon = focused
           ? require('../../assets/mine_selected.png')
           : require('../../assets/mine.png');
-      return <Image source={icon} style={{height: 22, width: 22}}/>;
+      return <Image source={icon} style={{height: 24, width: 22}}/>;
     },
   };
   constructor(props) {

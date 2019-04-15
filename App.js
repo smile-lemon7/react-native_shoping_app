@@ -54,6 +54,7 @@ const AppNavigator = createStackNavigator({
       // header: null,
       headerStyle: {backgroundColor: theme.primaryColor},
       headerBackTitleStyle: {color: '#000'},
+      headerLeft: null,
     },
   },
   confirmOrder : {
