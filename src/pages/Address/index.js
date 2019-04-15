@@ -94,7 +94,8 @@ export default class AddressPage extends Component {
   }
 
   onSelect = async (item) => {
-    await AsyncStorage.setItem('deliveryAddress', JSON.stringify(item))
+    await AsyncStorage.setItem('deliveryAddress', JSON.stringify(item));
+    this.props.navigation.goBack();
   }
 
   render() {

@@ -5,10 +5,19 @@ export default StyleSheet.create({
     // width: '42%',
     width: '48%',
   },
+  OrderProdWrap: {
+    width: '100%',
+    paddingRight: '4%',
+    paddingTop: 15,
+  },
+  OrderProdImg: {
+    width: '30%',
+  },
   CardWrapR: {
     height: 140,
     flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: '#fff',
   },
   Card: {
     width: '100%',
@@ -34,6 +43,11 @@ export default StyleSheet.create({
   },
   CardR: {
     width: '100%',
+    height: '60%',
+    alignItems: 'center',
+  },
+  ProdCardR: {
+    width: '70%',
     height: '60%',
     alignItems: 'center',
   },

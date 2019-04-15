@@ -6,7 +6,7 @@ import theme from '../../theme';
 
 
 export default function ProdItemR({price, title, cover_img, stock, onPress}) {
-  let height = 0;
+  console.log( price, title, cover_img, stock, onPress )
   
   return(
     <TouchableOpacity style={styles.CardWrap} onPress={onPress}>
@@ -14,7 +14,7 @@ export default function ProdItemR({price, title, cover_img, stock, onPress}) {
         <Image source={{uri: cover_img[0]}} style={[styles.img, styles.imgR]} />
         <View style={styles.CardR}>
           <Text style={styles.title}>{title}</Text>
-          <View style={{width:'90%',marginTop:10,flexDirection:'row',alignItems:'flex-end'}}>
+          <View style={{width:'80%',marginTop:10,flexDirection:'row',alignItems:'flex-end'}}>
             <PricePanel price={price} color={theme.primaryColor} size={18} />
             <Text style={{color:'#888',marginLeft: 8}}>库存{stock}</Text>
           </View>
