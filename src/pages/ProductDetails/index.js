@@ -102,10 +102,10 @@ export default class ProductDetails extends Component {
 
   onSelectAddress = () => {
     if(this.state.addressList.length>0) {
-      console.log( this.state.addressList )
       this.setState({addressModal: true, visible: false})
     }else {
-      console.log('还没有地址，去添加')
+      this.setState({visible: false})
+      this.props.navigation.navigate('address');
     }
   }
 
@@ -241,7 +241,7 @@ export default class ProductDetails extends Component {
               </View>
               <FlatList 
                 data={addressList}
-                renderItem={({item}) => <TouchableHighlight onPress={item.onSelect} underlayColor={'transparent'}>
+                renderItem={({item}) => <TouchableHighlight key={item.id} onPress={item.onSelect} underlayColor={'transparent'}>
                   <View style={styles.addressItemWrap}>
                     <View style={styles.addressItemT}>
                       <Text>{item.receiver}</Text>

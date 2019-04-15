@@ -20,10 +20,15 @@ export default class MinePage extends Component {
     }
   }
 
+  onMyAddress = () => {
+    this.props.navigation.navigate('address');
+  }
+
   render() {
     return (
       <View style={[styles.container]}>
         <Text style={styles.loginTitle}>我的</Text>
+        <Text style={styles.loginTitle} onPress={this.onMyAddress}>我的收货地址</Text>
       </View>
     );
   }

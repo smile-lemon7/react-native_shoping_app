@@ -19,6 +19,7 @@ export default class HomePage extends Component {
           : require('../../assets/home.png');
       return <Image source={icon} style={{height: 22, width: 22}}/>;
     },
+    header: null
   };
 
   constructor(props) {
@@ -42,6 +43,7 @@ export default class HomePage extends Component {
 
     }else {
       await AsyncStorage.setItem("deliveryAddress", '{}');
+      // await AsyncStorage.setItem("address", '[]');
     }
     /* slider */
     const {data: carouselList} = await carouselServices.query_carousel();

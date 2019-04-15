@@ -6,14 +6,17 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet} from 'react-native';
+// import React, {Component} from 'react';
+import {Platform, StyleSheet, AsyncStorage} from 'react-native';
 import LoginPage from './src/pages/LoginPage';
 import { createStackNavigator, createAppContainer } from "react-navigation";
+import theme from './src/theme';
+
 import BottomBar from './src/Layout/BottomBar';
 import ProductDetails from './src/pages/ProductDetails';
 import ConfirmOrder from './src/pages/ConfirmOrder';
-import theme from './src/theme';
+import AddressPage from './src/pages/Address';
+
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -33,6 +36,7 @@ const instructions = Platform.select({
 //   }
 // }
 
+
 const AppNavigator = createStackNavigator({
   login: {
     screen: LoginPage
@@ -47,7 +51,9 @@ const AppNavigator = createStackNavigator({
   layout: {
     screen: BottomBar,
     navigationOptions:{
-      header: null,
+      // header: null,
+      headerStyle: {backgroundColor: theme.primaryColor},
+      headerBackTitleStyle: {color: '#000'},
     },
   },
   confirmOrder : {
@@ -56,7 +62,16 @@ const AppNavigator = createStackNavigator({
       headerStyle: {backgroundColor: theme.primaryColor},
       headerBackTitleStyle: {color: '#fff'},
     },
-  }
+  },
+  address: {
+    screen: AddressPage,
+    navigationOptions:{
+      headerStyle: {backgroundColor: theme.primaryColor},
+      headerBackTitleStyle: {color: '#fff'},
+      headerTitleStyle: {fontWeight: 'normal',color:'#fff'},
+    },
+  },
+
 });
 export default createAppContainer(AppNavigator);
 

@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, TouchableHighlight } from 'react-native';
 import styles from './style.js';
+import theme from '../../theme';
 import icon from '../../fontConf';
 
 export default class ConfirmOrder extends Component {
-  static navigationOptions = {
-    headerLeft: (<View style={{flexDirection: 'row',alignItems:'center'}}>
-      <Text 
-        onPress={() => alert('This is a button!')} 
-        style={{fontFamily:'Iconfont',fontSize:22,color:'#fff'}}
-      >
-        {icon('zuojiantou')}
-      </Text>
-      <Text style={{color:'#fff',fontSize: 16}}>确认订单</Text>
-    </View>)
-
-  };
+  static navigationOptions = ({navigation}) => ({
+    headerLeft: (<TouchableHighlight onPress={()=>navigation.goBack()} underlayColor={'transparent'}>
+      <View style={{flexDirection: 'row',alignItems:'center'}}>
+        <Text 
+          style={{fontFamily:'Iconfont',fontSize:22,color:'#fff'}}
+        >
+          {icon('zuojiantou')}
+        </Text>
+        <Text style={{color:'#fff',fontSize: 16}}>确认订单</Text>
+      </View>
+    </TouchableHighlight>
+    )
+  })
 
   constructor(props) {
     super(props);

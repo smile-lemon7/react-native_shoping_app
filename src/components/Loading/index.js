@@ -25,7 +25,7 @@ export default class Loaing extends Component {
                 animating: false,
                 modalVisible: false
             });
-        }, 3000);
+        }, 1000);
     }
 
     componentWillUnmount(){

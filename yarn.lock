@@ -5098,6 +5098,13 @@ react-native-swiper@^1.5.14:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-switch@^1.5.0:
+  version "1.5.0"
+  resolved "http://registry.npm.taobao.org/react-native-switch/download/react-native-switch-1.5.0.tgz#a5c8e72f87def649d1c9de027c5ae27e2037ea40"
+  integrity sha1-pcjnL4fe9knRyd4CfFrifiA36kA=
+  dependencies:
+    prop-types "^15.6.0"
+
 react-native-tab-navigator@^0.3.4:
   version "0.3.4"
   resolved "http://registry.npm.taobao.org/react-native-tab-navigator/download/react-native-tab-navigator-0.3.4.tgz#54a18f1ad06a09d4a0de81ff00416bc1b760c960"

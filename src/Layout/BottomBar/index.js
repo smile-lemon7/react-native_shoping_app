@@ -71,15 +71,8 @@ import HomePage from '../../pages/HomePage';
 import ClassesPage from '../../pages/ClassesPage';
 import ShopingCartPage from '../../pages/ShopingCartPage';
 import MinePage from '../../pages/MinePage';
+import theme from '../../theme';
 
-const HomeIcon = require('../../assets/home.png');
-const HomeIcon_S = require('../../assets/home_selected.png');
-const ClassesIcon = require('../../assets/classes.png');
-const ClassesIcon_S = require('../../assets/classes_selected.png');
-const CartIcon = require('../../assets/shoping_cart.png');
-const CartIcon_S = require('../../assets/shoping_cart_selected.png');
-const MineIcon = require('../../assets/mine.png');
-const MinePageIcon = require('../../assets/mine_selected.png');
 
 const Layout = createBottomTabNavigator({
   home: {
@@ -96,7 +89,7 @@ const Layout = createBottomTabNavigator({
   },
 }, {
   tabBarOptions: { //对于导航的设置
-    activeTintColor: '#13D1BE',
+    activeTintColor: theme.primaryColor,
   },  
   // navigationOptions: ({navigation}) => ({
   //   title: navigation.state.routeName,
@@ -111,17 +104,19 @@ const Layout = createBottomTabNavigator({
 Layout.navigationOptions = ({navigation}) => {
   let {routeName} = navigation.state.routes[navigation.state.index];
   let headerTitle = '';
+  let headerVisible = '';
   switch(routeName ) {
-    case 'home': headerTitle = '首页'; break;
-    case 'classes': headerTitle = '分类'; break;
-    case 'cart': headerTitle = '购物车'; break;
-    case 'mine': headerTitle = '我的'; break;
+    case 'home': headerTitle = '首页'; headerVisible = null;break;
+    case 'classes': headerTitle = '分类'; headerVisible = null;break;
+    case 'cart': headerTitle = '购物车'; headerVisible = undefined;break;
+    case 'mine': headerTitle = '我的'; headerVisible = null; break;
   }
   
   return {
     headerTitle,
     headerLeft: null,
-    headerTitleStyle: {fontWeight: 'normal'},
+    headerTitleStyle: {fontWeight: 'normal',color:'#fff'},
+    header: headerVisible,
   };
 };
 

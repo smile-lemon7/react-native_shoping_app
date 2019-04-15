@@ -23,12 +23,13 @@ export default {
         Toast.show('手机号不存在',{position: Toast.positions.CENTER,})
       }
     },
-    async login({code, inpCode, phone}) {
+    async login({code, inpCode, phone, navigate}) {
       if(code === inpCode) {
         const { data } = await userServices.login({phone});
         // reducers.saveUserInfo({params: data});
         await AsyncStorage.setItem("logined", 'true');
         await AsyncStorage.setItem("userInfo", JSON.stringify(data));
+        navigate('layout');
       }else {
         Toast.show('验证码输入错误',{position: Toast.positions.CENTER,})
   
