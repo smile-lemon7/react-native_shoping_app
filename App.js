@@ -16,6 +16,8 @@ import BottomBar from './src/Layout/BottomBar';
 import ProductDetails from './src/pages/ProductDetails';
 import ConfirmOrder from './src/pages/ConfirmOrder';
 import AddressPage from './src/pages/Address';
+import MyOrders from './src/pages/MyOrders';
+import OrderDetails from './src/pages/OrderDetails';
 
 
 const instructions = Platform.select({
@@ -72,6 +74,21 @@ const AppNavigator = createStackNavigator({
       headerTitleStyle: {fontWeight: 'normal',color:'#fff'},
     },
   },
+  myOrders: {
+    screen: MyOrders,
+    navigationOptions:{
+      header: null,
+      // headerBackTitle: '我的订单',
+    },
+  },
+  orderDetails: {
+    screen: OrderDetails,
+    navigationOptions:{
+      headerStyle: {backgroundColor: theme.primaryColor},
+      headerBackTitleStyle: {color: '#fff'},
+      headerTitleStyle: {fontWeight: 'normal',color:'#fff'},
+    },
+  }
 
 });
 export default createAppContainer(AppNavigator);

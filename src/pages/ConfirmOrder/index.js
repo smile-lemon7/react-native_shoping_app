@@ -54,7 +54,7 @@ export default class ConfirmOrder extends Component {
     delete unConfirmOrder.orderProdArr;
 
     // console.log(unConfirmOrder)
-    const { data} = await orderServices.submit(unConfirmOrder);
+    const { data } = await orderServices.submit(unConfirmOrder);
     const { data:pay_url } = await orderServices.pay(data);
     const { re_url } = pay_url;  //支付宝回调地址
     Linking.openURL(re_url)
