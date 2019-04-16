@@ -13,7 +13,6 @@ function add(params) {
 }
 
 function edit(params) {
-  console.log(params)
   const { user_id, id} = params;
   delete params.user_id;
   delete params.id;

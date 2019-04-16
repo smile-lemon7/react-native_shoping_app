@@ -81,7 +81,7 @@ export default class MyOrders extends Component {
           tabBarActiveTextColor={theme.primaryColor}
           style={{borderBottomWidth: 0}}
           renderTabBar={() => <ScrollableTabBar 
-              style={{height: 40,borderWidth:0,elevation:2,backgroundColor:'#f1f1f1'}} 
+              style={{height: 40,borderWidth:0,elevation:2,backgroundColor:'#fff'}} 
               tabStyle={{height: 39}} 
               underlineHeight={1}
           />}

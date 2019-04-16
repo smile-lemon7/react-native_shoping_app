@@ -4,10 +4,16 @@ import theme from '../../theme';
 
 export default StyleSheet.create({
   container: {
-    width: '92%',
+    width: '100%',
     flex: 1,
     alignItems: 'center',
-    backgroundColor: "#F5FCFF",
+    backgroundColor: "#f1f1f1",
     paddingTop: theme.statusBarHeight,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+  prodsWrap: {
+    flex: 1,
+  }
+
 })
