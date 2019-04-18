@@ -11,9 +11,9 @@ export default {
   effects: {
     async queryCode({phone, cb}){
       if( phone && isPhoneNum(phone)) {
-        // const {data} = await userServices.queryCode({phone});
-        cb({'code': '1234'})
-        // cb(data)
+        const {data} = await userServices.queryCode({phone});
+        // cb({'code': '1234'})
+        cb(data)
       }else {
         Toast.show('手机号不存在',{position: Toast.positions.CENTER,})
       }
