@@ -29,5 +29,22 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#9DD6EB',
+  },
+  classWrap: {
+    width: '100%',
+    paddingLeft: '4%',
+    flexDirection: 'row',
+    marginTop: 15,
+    marginBottom :15,
+  },
+  classCard: {
+    minWidth: 50,
+    height: 50,
+    marginRight: 20,
+    backgroundColor: '#fff',
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: theme.primaryColor,
   }
 })

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, AsyncStorage, Linking } from 'react-native';
+import { View, AsyncStorage, Linking, DeviceEventEmitter } from 'react-native';
 import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
 
 import styles from './style.js';
@@ -32,6 +32,14 @@ export default class MyOrders extends Component {
     let delivery = data.filter(item => {return item.status === 1});
     let collectGoods = data.filter(item => {return item.status === 2});
     this.setState({list: data, curr_tab: page, stayPay, delivery, collectGoods})
+
+    var that = this;
+    this.listener = DeviceEventEmitter.addListener('cancelOrder',async function(params){
+      const { id } = params;
+      let { list } = that.state;
+      list = list.filter(ls => {return ls.order_id !== id})
+      that.setState({list})
+    });
   }
 
   onDetails = (order_id) => {
@@ -103,5 +111,8 @@ export default class MyOrders extends Component {
         </ScrollableTabView>
       </View>
     )
+  }
+  componentWillUnmount(){
+    this.listener.remove();
   }
 }

@@ -43,6 +43,14 @@ class ClassesPage extends Component {
     this.setState({classItem: data, curr_tab: {id: cls_id, name}});
   }
   
+  onProdDetails = async ({prd_id}) => {
+    // this.props.navigation.navigate('prod_detail', {prd_id});
+    const detail_id = await AsyncStorage.getItem("detail_id");
+    if(detail_id !== prd_id) {
+      this.props.navigation.navigate('prod_detail', {prd_id});
+      await AsyncStorage.setItem("detail_id", JSON.stringify({prd_id}));
+    }
+  }
 
   render() {
     let { classes, loading, classItem, curr_tab } = this.state;
@@ -58,7 +66,7 @@ class ClassesPage extends Component {
           > 
             <View style={styles.prodsWrap}>
               {JSON.stringify(classItem)==='{}'?<View style={{width:'70%',marginTop: 30,alignItems:'center'}}><Text>该分类下暂时没有商品</Text></View>:
-                <ClassGroup {...classItem} />
+                <ClassGroup classItem={classItem} onProdDetails={this.onProdDetails}/>
               }
             </View>
           </SideMenu>

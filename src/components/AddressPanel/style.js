@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import theme from '../../theme';
 
 export default StyleSheet.create({
   panelWrap: {
@@ -29,6 +30,14 @@ export default StyleSheet.create({
     paddingLeft: 6,
     borderLeftWidth: 1,
     borderColor: '#888',
+  },
+  addressDetails: {
+    position: 'relative',
+    width: '100%',
+    marginTop: 10,
+    flexDirection: 'row',
+  },
+  default: {
+    color: theme.tbColor
   }
-  
 })

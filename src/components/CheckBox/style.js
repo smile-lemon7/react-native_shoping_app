@@ -13,6 +13,7 @@ export default StyleSheet.create({
    paddingRight: '2%',
    paddingTop: 10,
    paddingBottom: 10,
+   marginBottom: 15,
   },
   agreeItemWrap: {
     width: '96%',

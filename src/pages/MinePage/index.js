@@ -56,7 +56,7 @@ export default class MinePage extends Component {
       <View style={[styles.container]}>
         <View style={styles.myInfo}>
           <Image source={require('../../assets/avatar.png')} style={{width: 40, height: 40, marginRight:10}} />
-          <Text style={{color:'#fff',fontSize:14}}>{phone}</Text>
+          <Text style={{color:'#000',fontSize:14}}>{phone}</Text>
         </View>
         <View style={styles.myOrders}>
           <PanelTitle title="我的订单" subTitle="查看全部订单" onClick={()=>this.onOrderType(0)}/>

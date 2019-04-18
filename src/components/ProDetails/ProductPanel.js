@@ -35,8 +35,7 @@ export default class ProductPanel extends Component {
     const { cover_img, price, title, currentAddress, content} = this.state;
     // const prodParamsLabel = ['生产日期', '产地', '净含量', '包装种类'];
     let { sameProducts } = this.state;
-    // sameProducts = sameProducts.map( item => ({...item, onPress: () => this.props.onDetails({prd_id: item.id})}));
-    sameProducts = sameProducts.map( item => ({...item, onPress: () => this.props.onDetails({prd_id: 1})}));
+    sameProducts = sameProducts.map( item => ({...item, onPress: () => this.props.onDetails({prd_id: item.id})}));
     // let norms =['2019-03-03', '上海', '20ml', '瓶装'];
     let norms = [
       {title: '生产日期', value: '2019-03-03'},

@@ -32,10 +32,17 @@ function reduceCounts(params) {
   });
 }
 
+function del({user_id, id}) {
+  return request(`/api/del/shop/${user_id}/cart/${id}/`, {
+    method: 'DELETE',
+  });
+}
+
 
 export default {
   addCart,
   query,
   addCounts,
-  reduceCounts
+  reduceCounts,
+  del,
 }

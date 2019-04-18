@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
 });
 
 export default function Menu({ onItemSelected, classes, curr_tab }) {
-  console.log( curr_tab )
   return (
     <ScrollView scrollsToTop={false} style={styles.menu}>
       {classes.map(cs => (

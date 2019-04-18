@@ -31,6 +31,9 @@ export default StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
   },
+  ClsCard: {
+    height: 160,
+  },
   img: {
     width: '80%',
     height: '50%',
@@ -56,7 +59,6 @@ export default StyleSheet.create({
     height: 28,
     lineHeight: 14,
     fontSize: 12,
-    marginBottom: 10,
-  }
-
+    // marginBottom: 10,
+  },
 })

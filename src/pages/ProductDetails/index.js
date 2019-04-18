@@ -16,6 +16,7 @@ import ProdCount from '../../components/ProdCount';
 import productServices from '../../services/products';
 import product from '../../models/product';
 
+
 export default class ProductDetails extends Component {
 
   constructor(props) {
@@ -32,6 +33,7 @@ export default class ProductDetails extends Component {
   }
 
   async componentWillMount() {
+
     const { params: {prd_id} } = this.props.navigation.state;
     this.query({id: prd_id});
     const currentAddress = await AsyncStorage.getItem("deliveryAddress");
@@ -94,7 +96,7 @@ export default class ProductDetails extends Component {
     }
   }
 
-  cartHandle = (params) => {
+  cartHandle = async (params) => {
     this.setState({visible: false})
     product.effects.onCart(params);
   }
@@ -262,4 +264,7 @@ export default class ProductDetails extends Component {
       </View>
     );
   }
+  componentWillUnmount(){
+    this.prodListener.remove();
+  };
 }

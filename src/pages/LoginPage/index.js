@@ -5,6 +5,8 @@ import styles from './style.js';
 import globalStyle from '../../../globalStyle.js';
 import user from '../../models/user.js';
 import Loading from '../../components/Loading';
+import { getmyDate, getTimeDifference } from '../../utils/utils';
+
 
 export default class LoginPage extends Component {
   
@@ -18,12 +20,23 @@ export default class LoginPage extends Component {
   }
 
   async componentWillMount() {
-    // await AsyncStorage.setItem("logined", 'false');
-    // await AsyncStorage.setItem("deliveryAddress", '{}');
-    // await AsyncStorage.setItem("address", '[]');
+
+    // await AsyncStorage.clear();
+
+    let outData = false;
+    const time = await AsyncStorage.getItem("loginedTime");
+    if(time) {
+    //  console.log( '时间差', getTimeDifference(time) )
+     outData = getTimeDifference(time) >=7 ? true : false;
+    }
     let logined = await AsyncStorage.getItem("logined");
-    this.setState({logined})
-    logined==='true'? this.props.navigation.navigate('layout') : null;
+    if( logined==='true' && !outData ) {
+      this.props.navigation.navigate('layout')
+      this.setState({logined: 'true'})
+    }else {
+      this.setState({logined: 'false'});
+      await AsyncStorage.clear();
+    }
   }
 
   saveCode = ({ code }) => {

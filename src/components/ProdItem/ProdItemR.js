@@ -7,7 +7,6 @@ import theme from '../../theme';
 
 export default function ProdItemR({price, title, cover_img, stock, onPress}) {
   console.log( price, title, cover_img, stock, onPress )
-  
   return(
     <TouchableOpacity style={styles.CardWrap} onPress={onPress}>
       <View style={[styles.Card, styles.CardWrapR]}>

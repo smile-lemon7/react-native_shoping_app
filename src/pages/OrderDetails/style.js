@@ -8,12 +8,12 @@ export default StyleSheet.create({
     overflow: 'scroll',
     alignItems: 'center',
     backgroundColor: "#f1f1f1",
-    position: 'relative',
+    // position: 'relative',
   },
   proPanel: {
     // paddingLeft: '2%',
     // paddingRight: '2%',
-    position: 'relative',
+    // position: 'relative',
     flex: 1,
   },
   addressPanelWrap: {
@@ -37,9 +37,10 @@ export default StyleSheet.create({
   },
   prodWrap: {
     width: '100%',
+    paddingLeft: '2%',
+    paddingRight: '2%',
     marginTop: 15,
     backgroundColor: '#fff',
-    paddingBottom: 20,
   },
   totalPricePanel: {
     paddingLeft: '4%',
@@ -50,6 +51,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   orderDetail: {
+    paddingTop: 15,
     backgroundColor: '#fff',
     paddingLeft: '4%',
     paddingRight: '4%',
@@ -59,6 +61,7 @@ export default StyleSheet.create({
     borderLeftWidth: 2,
     borderColor: theme.tbColor,
     paddingLeft: 6,
+    marginBottom: 8,
   },
   orderTitle: {
    fontWeight: '300',

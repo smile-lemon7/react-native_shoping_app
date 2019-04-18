@@ -18,6 +18,7 @@ import ConfirmOrder from './src/pages/ConfirmOrder';
 import AddressPage from './src/pages/Address';
 import MyOrders from './src/pages/MyOrders';
 import OrderDetails from './src/pages/OrderDetails';
+import CarouselDetails from './src/pages/CarouselDetails';
 
 
 const instructions = Platform.select({
@@ -54,9 +55,9 @@ const AppNavigator = createStackNavigator({
     screen: BottomBar,
     navigationOptions:{
       // header: null,
-      headerStyle: {backgroundColor: theme.primaryColor},
-      headerBackTitleStyle: {color: '#000'},
-      headerLeft: null,
+      // headerStyle: {backgroundColor: theme.primaryColor},
+      // headerBackTitleStyle: {color: '#000'},
+      // headerLeft: null,
     },
   },
   confirmOrder : {
@@ -87,6 +88,12 @@ const AppNavigator = createStackNavigator({
       headerStyle: {backgroundColor: theme.primaryColor},
       headerBackTitleStyle: {color: '#fff'},
       headerTitleStyle: {fontWeight: 'normal',color:'#fff'},
+    },
+  },
+  carouselDetails: {
+    screen: CarouselDetails,
+    navigationOptions:{
+      header: null,
     },
   }
 

@@ -12,7 +12,7 @@ export default function AddressPanel({addressInfo}) {
       </View>
       <View style={{flex:1,justifyContent:'space-between',flexDirection:'row',alignItems:'center',paddingRight:15}}>
         <TouchableHighlight onPress={onSelect} underlayColor={'transparent'} style={{width:'100%'}}>
-          <View>
+          <View style={{width:"100%"}}>
             <View style={styles.CT}>
               <Text style={{marginRight: 10}}>{receiver}</Text>
               <Text>{phone}</Text>
@@ -25,9 +25,8 @@ export default function AddressPanel({addressInfo}) {
             </View>
           </View>
         </TouchableHighlight>
-        <TouchableHighlight onPress={onEditClick} underlayColor={'transparent'}><View style={styles.edit}><Text style={{color:'#888'}}>编辑</Text></View></TouchableHighlight>
       </View>
-      
+      <TouchableHighlight onPress={onEditClick} underlayColor={'transparent'} style={{width:50}}><View style={styles.edit}><Text style={{color:'#888'}}>编辑</Text></View></TouchableHighlight>
     </View>
   )
 }

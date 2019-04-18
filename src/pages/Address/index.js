@@ -67,15 +67,17 @@ export default class AddressPage extends Component {
     this.setState({visible: true});
   }
 
-  onSave = (params) => {
+  onSave = async (params) => {
     const {phone, isDefault, _type, details, receiver, user_id, id} = params;
     if( isPhoneNum(phone) ) {
       if(_type === 'add') {
-        addressServices.add({details, isDefault, phone, receiver, user_id});
+        await addressServices.add({details, isDefault, phone, receiver, user_id});
       }else {
-        addressServices.edit({details, isDefault, phone, receiver, user_id, id});
+        await addressServices.edit({details, isDefault, phone, receiver, user_id, id});
       }
-      this.setState({visible: false})
+      const { data: list} = await addressServices.query_all({user_id: this.state.user_id});
+      this.setState({list, visible: false})
+
     }else {
       Toast.show('该联系方式不存在', {position: Toast.positions.CENTER});
       this.setState({visible: false})
@@ -110,7 +112,7 @@ export default class AddressPage extends Component {
           data={list}
           renderItem={({item}) => <AddressPanel addressInfo={item} key={item.id} />}
           style={{width:'100%',backgroundColor:'#f1f1f1'}}
-          />:<Text>暂无数据，快去添加吧！</Text>
+          />:<View style={{flex:1,alignItems:'center',marginTop:20}}><Text>暂无数据，快去添加吧！</Text></View>
         }
         <Modal
           animationType="slide"
@@ -118,7 +120,7 @@ export default class AddressPage extends Component {
           visible={visible}
         >
           <View style={styles.modalWrap}>
-            <View style={{flexDirection:'row', justifyContent: 'space-between',alignItems:'center'}}>
+            <View style={{flexDirection:'row', justifyContent: 'space-between',alignItems:'center',paddingLeft:'2%',paddingRight:'2%'}}>
               <TouchableHighlight onPress={()=>{this.setState({visible: false})}} underlayColor={'transparent'}>
                 <View style={{flexDirection: 'row',alignItems:'center'}}>
                   <Text 
@@ -142,7 +144,7 @@ export default class AddressPage extends Component {
               <AddressInput value={editInfo.phone} type={'phone'} title={'手机号码'} onChange={this.onChange}/>
               <AddressInput value={editInfo.details} type={'details'} title={'详细地址'} onChange={this.onChange}/>
             </View>:
-            <View>
+            <View style={{width:'100%',alignItems:'center',backgroundColor:'#fff',marginTop: 20}}>
               <AddressInput  type={'receiver'} title={'收货人'} onChange={this.onChange}/>
               <AddressInput  type={'phone'} title={'手机号码'} onChange={this.onChange}/>
               <AddressInput  type={'details'} title={'详细地址'} onChange={this.onChange}/>

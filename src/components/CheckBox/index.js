@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableHighlight, Text, Image } from 'react-native';
+import { View, TouchableHighlight, Text, Image, DeviceEventEmitter } from 'react-native';
 import styles from './style.js';
 import icon from '../../fontConf';
 import theme from '../../theme';
@@ -15,12 +15,15 @@ class CheckBox extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     let { counts } = this.props.info;
-    console.log(counts)
     this.setState({count: counts*1})
-  }
 
+    var that = this;
+    this.listener = DeviceEventEmitter.addListener('allChecked',async function(params){
+      that.setState({checked: params.allChecked})
+    });
+  }
 
   onCheck = () => {
     let { checked } = this.state;
@@ -43,7 +46,6 @@ class CheckBox extends Component {
     }else {
       this.setState({count: 1})
       this.props.onReduce({counts: 1, item: info})
-
     }
   }
 
@@ -54,17 +56,17 @@ class CheckBox extends Component {
 
     return (
       <View style={styles.Wrap}>
-        <TouchableHighlight onPress={this.onCheck} underlayColor={'transparent'} style={{width: 24,height:24}}>
+        <TouchableHighlight onPress={this.onCheck} underlayColor={'transparent'} style={{width: 24,height:24,marginRight:8}}>
           <View style={styles.radio}>
             {checked?<Text style={{fontFamily:'Iconfont',fontSize: 18, color:theme.primaryColor,marginTop:3,marginLeft:2}}>{icon('duihao1')}</Text>:null}
           </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={()=>this.props.onDetails(id)} underlayColor={'transparent'}>
           <View style={styles.RPanel}>
-            <Image source={{uri: cover_img[0]}} style={{width: 80, height: 80,marginBottom:15}} />
+            <Image source={{uri: cover_img[0]}} style={{width: 80, height: 80,marginBottom:15,marginRight:8}} />
             <View style={styles.CardR}>
               <Text numberOfLines={2} >{title}</Text>
-              <View style={{width:'100%',flexDirection:'row',justifyContent:'space-between'}}>
+              <View style={{width:'96%',flexDirection:'row',justifyContent:'space-between'}}>
                 <PricePanel price={price} color={theme.tbColor} size={20} oth_size={16} />
                 <ProdCount count={count} onAdd={this.onAdd} onReduce={this.onReduce} />
               </View>
@@ -73,6 +75,9 @@ class CheckBox extends Component {
         </TouchableHighlight>
       </View>
     )
+  }
+  componentWillUnmount(){
+    this.listener.remove();
   }
 }
 

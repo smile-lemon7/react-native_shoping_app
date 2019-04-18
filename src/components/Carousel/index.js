@@ -1,9 +1,9 @@
 import React from 'react';
 import Swiper from 'react-native-swiper';
-import { View, Image } from 'react-native';
+import { View, Image, TouchableHighlight } from 'react-native';
 import styles from './style';
 
-const Carousel = ({carouselList}) => {
+const Carousel = ({carouselList, onCarouselDetails}) => {
   return(
     <Swiper 
       style={styles.wrapper} 
@@ -20,9 +20,12 @@ const Carousel = ({carouselList}) => {
       }}
     >
       {carouselList.map(cl => (
-        <View style={styles.slide} key={cl.id}>
-          <Image source={{uri:cl.cover_img}} style={{width:'100%',height:'100%'}}/>
-        </View>
+        <TouchableHighlight onPress={()=>onCarouselDetails({id: cl.id})} underlayColor={'transparent'} key={cl.id}>
+          <View style={styles.slide}>
+            <Image source={{uri:cl.cover_img[0]}} style={{width:'100%',height:'100%'}}/>
+          </View>
+        </TouchableHighlight>
+        
       ))}
     </Swiper>
   )

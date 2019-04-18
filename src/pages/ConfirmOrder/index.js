@@ -86,7 +86,7 @@ export default class ConfirmOrder extends Component {
         <FlatList 
           numColumns={1}
           data={list}
-          style={{width:'94%',height:'100%',marginTop: 10,backgroundColor:'#f1f1f'}}
+          style={{width:'94%',marginBottom:60,marginTop: 15,backgroundColor:'#fff',paddingLeft:'2%',paddingRight:'2%',borderRadius:6}}
           renderItem={({item}) => <View style={styles.itemWrap}>
             <OrderProdItem key={item.id} {...item} />
           </View>}

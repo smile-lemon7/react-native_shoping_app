@@ -10,15 +10,10 @@ export default class DetailsPanel extends Component {
       loading: true,
     }
   }
-  componentWillMount() {
-    this.setState({prod_content: this.props.prod_content})
-  }
   componentDidMount() {
-    const that = this;
-    setTimeout(function(){
-      that.setState({loading: false})
-    }, 1)
+    this.setState({prod_content: this.props.prod_content, loading: false})
   }
+
   render() {
     return (
       <ScrollView>

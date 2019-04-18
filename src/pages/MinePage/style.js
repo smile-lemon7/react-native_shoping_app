@@ -15,7 +15,7 @@ export default StyleSheet.create({
     paddingTop: 12,
     paddingBottom: 12,
     paddingLeft: 10,
-    backgroundColor: theme.tbColor,
+    backgroundColor: '#fff',
     flexDirection: 'row',
     alignItems: 'center',
   },

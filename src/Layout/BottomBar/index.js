@@ -64,7 +64,8 @@
 //     height:23,
 //   }
 // });
-
+import React from 'react';
+import { Text } from 'react-native';
 import {createBottomTabNavigator} from "react-navigation";
 
 import HomePage from '../../pages/HomePage';
@@ -80,6 +81,9 @@ const Layout = createBottomTabNavigator({
   },
   classes: {
     screen: ClassesPage,
+    navigationOptions:{
+     
+    },
   },
   cart: {
     screen: ShopingCartPage,
@@ -115,7 +119,8 @@ Layout.navigationOptions = ({navigation}) => {
   return {
     headerTitle,
     headerLeft: null,
-    headerTitleStyle: {fontWeight: 'normal',color:'#fff'},
+    // headerRight: <Text style={{color:'#f00',fontSize:15,marginRight:9}} onPress={()=>console.log(this)}>管理</Text>,
+    headerTitleStyle: {fontWeight: 'normal',color:'#000'},
     header: headerVisible,
   };
 };

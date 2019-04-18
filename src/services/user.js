@@ -7,7 +7,16 @@ function login(params) {
   });
 }
 
+function queryCode(params) {
+  return request(`/sendsms`, { 
+    method: 'POST',
+    body: JSON.stringify(params),
+  });
+}
+
+
 
 export default {
   login,
+  queryCode,
 }
